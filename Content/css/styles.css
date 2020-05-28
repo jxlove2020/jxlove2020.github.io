@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap');
+
+body {
+    background-color: rgba(206, 240, 240, 0.726);
+}
+
+.navbar,
+.navbar-brand {
+    font-family: 'Alex Brush', cursive;
+    font-weight: 700;
+    font-size: 30px;
+}
