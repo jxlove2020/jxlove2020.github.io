@@ -8,5 +8,10 @@ body {
 .navbar-brand {
     font-family: 'Alex Brush', cursive;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 25px;
 }
+
+.navbar-brand {
+    font-size: 40px;
+}
+
