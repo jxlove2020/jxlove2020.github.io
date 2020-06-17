@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lotto</title>
+    <style>
+        #lotto{
+            display: flex;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+        .lotto {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(200, 250, 3, 0.3);
+            width: 100px;
+            height: 100px;
+            border: 2px solid rgb(113, 185, 243);
+            border-radius: 50%;
+            font-size: 3rem;
+            font-weight: 900;
+            margin-right: 15px;
+        }
+        #buttonBox{
+            text-align: center;
+            margin-top: 30px;
+        }
+        .button{
+            font-size: 1.5rem;
+            border-radius: .5rem;
+            padding: .5rem;
+            background-color: rgba(73, 85, 252, 0.3);
+            color:rgba(4, 126, 41, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <div id="lotto"></div>
+    <div id="buttonBox">
+        <button class="button">refresh</button>
+    </div>
+    <script>
+        (function(){
+
+            function Lotto(num, color) {
+                this.num = num;
+                this.color = color;
+                this.init();
+            }
+
+            Lotto.prototype = {
+                constructor: Lotto,
+                init: function() {
+                    const mainElem = document.createElement('div');
+                    mainElem.style.color = this.color;
+                    mainElem.innerHTML = this.num;
+                    mainElem.classList.add('lotto');
+                    document.querySelector('#lotto').appendChild(mainElem);
+                }
+            };
+
+            // 랜덤함수 6개 
+            function Rand() {
+                var str = [];
+                var tempStr = [];
+
+                for (var i = 0; i < 6; i++){
+                    str[i] = Math.floor(Math.random() * 45) + 1 ;
+
+                    if (tempStr.includes(str[i])){
+                        i--;
+                    }
+                    else {
+                        tempStr += str[i];
+                    }
+                }
+
+                return str;
+            }
+
+            const rndArr = Rand();
+            
+            const num1 = new Lotto(rndArr[0], 'rgba(100,50,250,.7)');
+            const num2 = new Lotto(rndArr[1], 'rgba(250,100,50,.7)');
+            const num3 = new Lotto(rndArr[2], 'rgba(200,100,200,.7)');
+            const num4 = new Lotto(rndArr[3], 'rgba(250,50,250,.7)');
+            const num5 = new Lotto(rndArr[4], 'rgba(150,50,150,.7)');
+            const num6 = new Lotto(rndArr[5], 'rgba(50,50,250,.7)');
+
+            const buttonElem = document.querySelector('.button');
+            buttonElem.addEventListener('click', function(){
+                location.reload();
+            });
+
+        })();
+    </script>
+</body>
+</html>
