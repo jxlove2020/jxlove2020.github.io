@@ -16,7 +16,7 @@ body {
 }
 
 .img_profile {
-    width: 300px;
+    width: 300px !important;
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
