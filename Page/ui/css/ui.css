@@ -1,0 +1,62 @@
+
+/* menu */
+.menu {
+    display: flex;
+}
+.menu-item {
+    width: 25%;
+    background: rgba(250, 238, 72, 0.7);
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+.menu-item:hover {
+    width: 35%;
+    background: rgba(250, 72, 72, 0.7);
+}
+
+/* padding 1em : 현재 글꼴의 크기 em */
+/* font-size 1.2rem : root 크기의 상속 */
+.menu-link {
+    display: block;
+    padding:1em;
+    font-size:1.2rem;
+    font-weight: bold;
+    color: #555;
+    text-decoration: none;
+    text-align: center;
+}
+.menu-link:hover {
+    color: #fff;
+}
+
+/* search */
+.search-form {
+    display: flex;
+    height: 40px;
+}
+.search-form input[type='search'] {
+    flex: 1;
+    margin-right: 10px;
+    border: 0;
+    border-radius: 0.3em;
+    -webkit-border-radius: 0.3em;
+    -moz-border-radius: 0.3em;
+    -ms-border-radius: 0.3em;
+    -o-border-radius: 0.3em;
+}
+.search-form input[type='submit'] {
+    width: 4em;
+    border: 0;
+    border-radius: 0.3em;
+    -webkit-border-radius: 0.3em;
+    -moz-border-radius: 0.3em;
+    -ms-border-radius: 0.3em;
+    -o-border-radius: 0.3em;
+    font-size: 1rem;
+    background: rgba(72, 143, 250, 0.7);
+}
+
+/* boolit list */
