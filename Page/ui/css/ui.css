@@ -1,4 +1,11 @@
 
+.container {
+    max-width:1080px;
+    margin: 0 auto;
+}
+section {
+    margin-top: 20px;
+}
 /* menu */
 .menu {
     display: flex;
@@ -37,6 +44,7 @@
     display: flex;
     height: 40px;
 }
+
 .search-form input[type='search'] {
     flex: 1;
     margin-right: 10px;
@@ -46,7 +54,9 @@
     -moz-border-radius: 0.3em;
     -ms-border-radius: 0.3em;
     -o-border-radius: 0.3em;
+    font-size: 1rem;
 }
+
 .search-form input[type='submit'] {
     width: 4em;
     border: 0;
@@ -59,4 +69,48 @@
     background: rgba(72, 143, 250, 0.7);
 }
 
-/* boolit list */
+/* bullet list */
+/* copychar.cc 아이콘 사이트, 로고키 + 세미콜론을 사용해도 된다. */
+.info-list-item {
+    display: flex;
+    margin: 1em 0;
+}
+.info-list-item::before {
+    content: '😍';
+    margin-right: 0.5em;;
+}
+
+/* message list */
+.user-item {
+    display: flex;
+    margin-bottom: 1.5em;
+}
+.user-photo {
+    flex-shrink: 0;
+    background: url('../../../Content/images/davidJo_680.jpg');
+    width: 50px;
+    height: 50px;
+    margin-right: 0.5em;;
+    border: 2px solid #333;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(250, 238, 72, 0.7);
+    background-size: 100%;
+}
+
+/* message list 말줄임표 */
+.message {
+    align-items: center;
+}
+
+.message-item {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
