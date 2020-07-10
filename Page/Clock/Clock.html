@@ -14,6 +14,7 @@
             margin: 20px auto;
             color: yellow;
             font-family: arial;
+            padding-top: 50px;
         }
         .clock span{
             padding: 15px;
@@ -29,9 +30,9 @@
         const clock = document.querySelector('.clock');
         const tick = () => {
             const now = new Date();
-            const h = now.getHours();
-            const m = now.getMinutes();
-            const s = now.getSeconds();
+            const h = addZero(now.getHours());
+            const m = addZero(now.getMinutes());
+            const s = addZero(now.getSeconds());
 
             const html = `
                 <span>${h}</span> : 
@@ -41,6 +42,9 @@
             clock.innerHTML = html;
         };
         setInterval(tick, 1000);
+
+        function addZero(i) {
+        if (i < 10) { i="0" + i; } return i; }
     </script>
 </body>
 </html>
