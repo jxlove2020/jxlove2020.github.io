@@ -1,0 +1,61 @@
+video#videoMovie {
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.content {
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
+}
+
+.dimContent {
+    position: absolute;
+    box-sizing: border-box;
+    border-radius: 50px;
+    background: linear-gradient(rgba(250, 250, 250, 0.1), rgba(0, 0, 0, 0.9));
+    color: white;
+    padding:5px 50px;
+    width: 70%;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+}
+
+@media (min-width: 1280px) {
+    .dimContent {
+        width: 50%;
+    }
+}
+
+@media (max-width: 360px) {
+    .dimContent {
+        top: 25%;
+        padding-top: 100px;
+    }
+}
