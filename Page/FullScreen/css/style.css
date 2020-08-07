@@ -53,9 +53,14 @@ video#videoMovie {
     }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 720px) {
     .dimContent {
-        top: 25%;
-        padding-top: 80px;
+        top: 0;
+        padding: 80px 30px;
+        transform: translate(-50%, -70px);
+        -webkit-transform: translate(-50%, -70px);
+        -moz-transform: translate(-50%, -70px);
+        -ms-transform: translate(-50%, -70px);
+        -o-transform: translate(-50%, -70px);
     }
 }
