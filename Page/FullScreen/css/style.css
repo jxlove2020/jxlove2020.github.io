@@ -53,9 +53,9 @@ video#videoMovie {
     }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 420px) {
     .dimContent {
         top: 25%;
-        padding-top: 100px;
+        padding-top: 80px;
     }
 }
