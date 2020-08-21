@@ -35,7 +35,7 @@ const unsub = db.collection('recipes').onSnapshot(snapshot => {
             deleteRecipe(doc.id);
         }
     })
-    console.log(snapshot.docChanges());
+    //console.log(snapshot.docChanges());
 });
 
 // db.collection('recipes').get().then((snapshot)=>{
