@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>FirebaseApp</title>
+</head>
+<body class="bg-light">
+    <div class="container my-5">
+        <h2>recipes</h2>
+
+        <ul>
+        </ul>
+        
+        <form>
+            <label for="recipe">Add a new recipe</label>
+            <div class="input-group">
+                <input type="text" class="form-control" id="recipe" required>
+                <div class="input-group-append">
+                    <input type="submit" value="add" class="btn btn-outline-secondary">
+                </div>
+            </div>
+        </form>
+        <br>
+        <button class="btn btn-info w-100">unsubscribe from changes</button>
+    </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
+    
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script>
+    
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCelPooyTOMjgfb1xrFho8b3OukxDczKTE",
+            authDomain: "modernjavascript-1d05e.firebaseapp.com",
+            databaseURL: "https://modernjavascript-1d05e.firebaseio.com",
+            projectId: "modernjavascript-1d05e",
+            storageBucket: "modernjavascript-1d05e.appspot.com",
+            messagingSenderId: "249209103941",
+            appId: "1:249209103941:web:e420519c89842790f1652c",
+            measurementId: "G-PGVY8F91K4"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+
+        const db = firebase.firestore();
+    </script>
+    <script src="js/sandbox.js"></script>
+</body>
+</html>
