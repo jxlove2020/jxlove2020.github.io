@@ -71,7 +71,7 @@ form.addEventListener('submit', e => {
 list.addEventListener('click', e=> {
     if (e.target.tagName === 'BUTTON') {
         const id = e.target.parentElement.parentElement.parentElement.getAttribute('data-id');
-        console.log(e.target.parentElement.parentElement);
+        //console.log(e.target.parentElement.parentElement);
         db.collection('recipes').doc(id).delete().then(() => {
             console.log('recipe deleted');
         }).catch(err => {
