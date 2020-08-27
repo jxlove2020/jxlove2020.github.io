@@ -3,6 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Expires" content="Mon, 06 Jan 1990 00:00:01 GMT">
+    <!--위의 명시된 날짜 이후가 되면 페이지가 캐싱되지 않는다.(1990년 이후 쭉 )-->
+    <meta http-equiv="Expires" content="-1">
+    <!--캐시된 페이지가 만료되어 삭제되는 시간을 정의하나 특별한 경우가 아니면 -1로 설정-->
+    <meta http-equiv="Pragma" content="no-cache">
+    <!--페이지 로드시마다 페이지를 캐싱하지 않는다.(HTTP 1.0)-->
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <!--페이지 로드시마다 페이지를 캐싱하지 않는다.(HTTP 1.1)-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
