@@ -31,9 +31,9 @@
         */
 
         let retLabels = ['2017', '2018', '2019', '2020'];
-        let retDatas1 = [79, 80, 25, 60];
-        let retDatas2 = [50, 40, 30, 95];
-        let retDatas3 = [57, 69, 48, 35];
+        let retDatas1 = [79000, 8000, 25000, 60000];
+        let retDatas2 = [5000, 4000, 30000, 9050];
+        let retDatas3 = [5700, 69000, 40800, 35000];
 
         new Chart(ctx, {
             type: 'line',
@@ -75,6 +75,36 @@
                             }
                         }
                     }]
+                },
+                tooltips: {
+                    "enabled": true,
+                    callbacks: {
+                        label: function (tooltipItem, data) {
+                            return tooltipItem.yLabel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                        }
+                    }
+                },
+                "animation": {
+                    "duration": 1,
+                    "onComplete": function () {
+                        var chartInstance = this.chart,
+                            ctx = chartInstance.ctx;
+
+                        ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize,
+                            Chart.defaults.global.defaultFontStyle, Chart.defaults.global
+                            .defaultFontFamily);
+                        ctx.textAlign = 'center';
+                        ctx.textBaseline = 'bottom';
+
+                        this.data.datasets.forEach(function (dataset, i) {
+                            var meta = chartInstance.controller.getDatasetMeta(i);
+                            meta.data.forEach(function (bar, index) {
+                                var data = dataset.data[index].toString().replace(
+                                    /\B(?=(\d{3})+(?!\d))/g, ",");
+                                ctx.fillText(data, bar._model.x, bar._model.y - 5);
+                            });
+                        });
+                    }
                 }
             }
         });
