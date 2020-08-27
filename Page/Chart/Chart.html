@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 </head>
+
 <body>
     <div style="width: 80%; margin: 50px auto;">
         <h3>Multi Line Chart</h3>
@@ -21,54 +23,54 @@
         */
 
         let retLabels = ['2017', '2018', '2019', '2020'];
-        let retDatas1 = [79,80,25,60];
-        let retDatas2 = [50,40,30,95];
-        let retDatas3 = [57,69,48,35];
+        let retDatas1 = [79, 80, 25, 60];
+        let retDatas2 = [50, 40, 30, 95];
+        let retDatas3 = [57, 69, 48, 35];
 
         new Chart(ctx, {
-        type: 'line',
-        data: {
-        labels: retLabels/*['2008', '2009',...]*/,
-        datasets: [
-        {
-        label: "A",
-        backgroundColor: 'rgba(234,70,42, .3)',
-        borderColor: 'rgba(234,70,42, .3)',
-        data: retDatas1
-        },
-        {
-        label: "B",
-        backgroundColor: 'rgba(159,180,10, .5)',
-        borderColor: 'rgba(159,180,10, .5)',
-        data: retDatas2
-        },
-        {
-        label: "C",
-        backgroundColor: 'rgba(246,174,14, .5)',
-        borderColor: 'rgba(246,174,14, .5)',
-        data: retDatas3
-        }
-        ]
-        },
-        options: {
-        maintainAspectRatio: true, // default value. false일 경우 포함된 div의 크기에 맞춰서 그려짐.
-        responsive: true,
-        scales: {
-        yAxes: [{
-        ticks: {
-        beginAtZero: true,
-        callback: function (value, index, values) {
-        if (parseInt(value) >= 1000) {
-        return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        } else {
-        return value;
-        }
-        }
-        }
-        }]
-        }
-        }
+            type: 'line',
+            data: {
+                labels: retLabels /*['2008', '2009',...]*/ ,
+                datasets: [{
+                        label: "A",
+                        backgroundColor: 'rgba(234,70,42, .3)',
+                        borderColor: 'rgba(234,70,42, .3)',
+                        data: retDatas1
+                    },
+                    {
+                        label: "B",
+                        backgroundColor: 'rgba(159,180,10, .5)',
+                        borderColor: 'rgba(159,180,10, .5)',
+                        data: retDatas2
+                    },
+                    {
+                        label: "C",
+                        backgroundColor: 'rgba(246,174,14, .5)',
+                        borderColor: 'rgba(246,174,14, .5)',
+                        data: retDatas3
+                    }
+                ]
+            },
+            options: {
+                maintainAspectRatio: true, // default value. false일 경우 포함된 div의 크기에 맞춰서 그려짐.
+                responsive: true,
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                            callback: function (value, index, values) {
+                                if (parseInt(value) >= 1000) {
+                                    return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                                } else {
+                                    return value;
+                                }
+                            }
+                        }
+                    }]
+                }
+            }
         });
     </script>
 </body>
+
 </html>
