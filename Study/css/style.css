@@ -1,0 +1,18 @@
+ul {
+    display: inline-block;
+    list-style: none;
+}
+li::before {
+    content: ">";
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0px 5px 6px 0px;
+}
+li.divide {
+    height:2px;
+    max-width: 100%;
+    border-bottom: 2px solid #efefef;
+}
+li.divide::before {
+    content:""
+}
