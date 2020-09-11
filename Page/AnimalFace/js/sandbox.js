@@ -97,43 +97,43 @@ async function predict() {
     var resultMessage = "";
     switch (prediction[0].className) {
         case "dog":
-            resultMessage = "개";
+            resultMessage = "강아지 상";
             break;
 
         case "cat":
-            resultMessage = "고양이";
+            resultMessage = "고양이 상";
             break;
 
         case "bear":
-            resultMessage = "개";
+            resultMessage = "곰 상";
             break;
 
         case "dino":
-            resultMessage = "공룡";
+            resultMessage = "공룡 상";
             break;
 
         case "squirrel":
-            resultMessage = "다람쥐";
+            resultMessage = "다람쥐 상";
             break;
             
         case "horse":
-            resultMessage = "말";
+            resultMessage = "말 상";
             break;
 
         case "cow":
-            resultMessage = "소";
+            resultMessage = "소 상";
             break;
 
         case "fox":
-            resultMessage = "여우";
+            resultMessage = "여우 상";
             break;
 
         case "mouse":
-            resultMessage = "쥐";
+            resultMessage = "쥐 상";
             break;
 
         case "rabbit":
-            resultMessage = "토끼"
+            resultMessage = "토끼 상";
             break;
 
         default:
