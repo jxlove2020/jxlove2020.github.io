@@ -94,8 +94,40 @@ async function predict() {
 
     console.log(prediction[0].className)
 
-    var resultMessage = "";
-    switch (prediction[0].className) {
+    let retMessage = strPredictionName(prediction[0].className);
+    
+    $(".resultMessage").html(retMessage);
+
+    for (let i = 0; i < maxPredictions; i++) {
+        const classPrediction =
+          "<div>" + strPredictionName(prediction[i].className) +
+          "</div>" + strVal(parseInt(prediction[i].probability.toFixed(2) * 100));
+        labelContainer.childNodes[i].innerHTML = classPrediction;
+    }
+}
+
+function strVal(val) {
+    const strRet = `
+    <div class="progress">
+        <div
+            class="progress-bar progress-bar-striped active"
+            role="progressbar"
+            aria-valuenow="${val}"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            style="width:${val}%"
+        >
+            ${val}
+        </div>
+    </div>
+    `;
+    return strRet;
+}
+
+function strPredictionName(name) {
+    let resultMessage = "";
+
+    switch (name) {
         case "dog":
             resultMessage = "강아지 상";
             break;
@@ -139,11 +171,6 @@ async function predict() {
         default:
             break;
     }
-    $('.resultMessage').html(resultMessage);
 
-    for (let i = 0; i < maxPredictions; i++) {
-        const classPrediction =
-            prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-        labelContainer.childNodes[i].innerHTML = classPrediction;
-    }
+    return resultMessage;
 }
