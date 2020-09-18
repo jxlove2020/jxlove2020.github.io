@@ -15,13 +15,6 @@ function readURL(input) {
 
         reader.readAsDataURL(input.files[0]);
 
-
-        // 파일이 로드 되면 인공지능 init 함수 실행이 끝난 다음에 predict 함수 실행
-        init().then(() => {
-            predict();
-        });
-
-
     } else {
         removeUpload();
     }
@@ -38,6 +31,7 @@ $('.image-upload-wrap').bind('dragover', function () {
 $('.image-upload-wrap').bind('dragleave', function () {
     $('.image-upload-wrap').removeClass('image-dropping');
 });
+
 
 // 인공지능 초기화 및 측정
 // More API functions here:
