@@ -102,7 +102,10 @@ async function predict() {
         const classPrediction =
           "<div>" + strPredictionName(prediction[i].className) +
           "</div>" + strVal(parseInt(prediction[i].probability.toFixed(2) * 100));
-        labelContainer.childNodes[i].innerHTML = classPrediction;
+
+        labelContainer.childNodes[i + 1].innerHTML = classPrediction;
+
+        console.log(classPrediction);
     }
 }
 
