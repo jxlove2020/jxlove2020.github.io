@@ -123,6 +123,11 @@ body {
       border-color: transparent;
   }
 
+  .ad {
+    width: 320px;
+    margin: 0 auto;
+  }
+
   .footer {
     padding: 20px;
     background: #222;
