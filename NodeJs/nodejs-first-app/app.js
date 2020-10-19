@@ -19,37 +19,58 @@ const hostname = '127.0.0.1';
 const port = 3000;
 
 app.get('/topic/new', function(req, res){
-    res.render('new')
+     fs.readdir('data', function(err, files){
+        if(err){
+            console.log(err);
+            res.status(500).send('Internal Server Error');
+        }
+        res.render('new', {topics: files});
+    });
 });
 
-app.get('/topic', function(req, res){
+app.get(['/topic', '/topic/:id'], function(req, res){
     fs.readdir('data', function(err, files){
         if(err){
             console.log(err);
             res.status(500).send('Internal Server Error');
         }
-        res.render('view', {topics:files});
-    })    
-});
 
-
-app.get('/topic/:id', function(req, res){
-    var id = req.params.id;
-
-    fs.readdir('data', function(err, files){
-        if(err){
-            console.log(err);
-            res.status(500).send('Internal Server Error');
+        var id = req.params.id;
+        if(id){
+            // id 값이 있을 때
+            fs.readFile('data/'+id, 'utf-8', function(err, data){
+                if(err){
+                    console.log(err);
+                    res.status(500).send('Internal Server Error');
+                }
+                res.render('view', {topics: files, title:id, description:data});
+            })
         }
-        fs.readFile('data/'+id, 'utf-8', function(err, data){
-            if(err){
-                console.log(err);
-                res.status(500).send('Internal Server Error');
-            }
-            res.render('view', {topics: files, title:id, description:data});
-        })
+        else {
+            // id 값이 없을 때
+            res.render('view', {topics:files, title:'', description:''});
+        }
     })    
 });
+
+// 중복 제거
+// app.get('/topic/:id', function(req, res){
+//     var id = req.params.id;
+
+//     fs.readdir('data', function(err, files){
+//         if(err){
+//             console.log(err);
+//             res.status(500).send('Internal Server Error');
+//         }
+//         fs.readFile('data/'+id, 'utf-8', function(err, data){
+//             if(err){
+//                 console.log(err);
+//                 res.status(500).send('Internal Server Error');
+//             }
+//             res.render('view', {topics: files, title:id, description:data});
+//         })
+//     })    
+// });
 
 app.post('/topic', function(req, res){
     var title = req.body.title;
@@ -59,7 +80,8 @@ app.post('/topic', function(req, res){
             console.log(err);
             res.status(500).send('Internal Server Error');
         }
-        res.send('Success!');
+        // res.send('Success!');
+        res.redirect('/topic/' + title);
     });
 });
 
