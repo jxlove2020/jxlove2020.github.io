@@ -1,4 +1,6 @@
 var express = require('express');
+var bodyParser = require('body-parser');
+
 var app = express();
 
 // 소스를 보기 좋은 형태로 뿌려줌
@@ -13,6 +15,24 @@ app.set('views', './views');
 
 // 미들웨어 : 정적인 파일이 위치할 디렉토리를 지정하는 기능
 app.use(express.static('public'));
+// 미들웨어 : post 방식으로 전달되어진 값을 사용할 수 있도록 해주는 기능
+app.use(bodyParser.urlencoded({ extended: false }))
+
+app.get('/form', function(req, res){
+  res.render('form');
+})
+
+// app.get('/form_receiver', function(req, res){
+//   var title = req.query.title;
+//   var description = req.query.description;
+//   res.send(title + ', ' + description);
+// })
+
+app.post('/form_receiver', function(req, res){
+  var title = req.body.title;
+  var description = req.body.description;
+  res.send(title + ', ' + description);
+})
 
 // /topic?id=1
 app.get('/topic/:id', function(req, res){
