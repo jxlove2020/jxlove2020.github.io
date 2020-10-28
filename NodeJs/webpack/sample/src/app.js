@@ -7,7 +7,7 @@ import imgFile from './images/skills01.png';
 
 document.addEventListener('DOMContentLoaded', () => {
     document.body.innerHTML = `
-    <img src = "${imgFile}" />
+    <img src = "${imgFile}" />    
     `
 })
 
