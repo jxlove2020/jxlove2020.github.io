@@ -2,7 +2,14 @@ body {
   margin: 0 auto;
   text-align: center;
 }
+div.wrap {
+  margin: 30px;
+}
 
+div {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
 .ball {
   display: inline-block;
   border: 1px solid black;
