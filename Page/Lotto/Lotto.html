@@ -3,115 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Expires" content="Mon, 06 Jan 1990 00:00:01 GMT">
-    <!--위의 명시된 날짜 이후가 되면 페이지가 캐싱되지 않는다.(1990년 이후 쭉 )-->
-    <meta http-equiv="Expires" content="-1">
-    <!--캐시된 페이지가 만료되어 삭제되는 시간을 정의하나 특별한 경우가 아니면 -1로 설정-->
-    <meta http-equiv="Pragma" content="no-cache">
-    <!--페이지 로드시마다 페이지를 캐싱하지 않는다.(HTTP 1.0)-->
-    <meta http-equiv="Cache-Control" content="no-cache">
-    <!--페이지 로드시마다 페이지를 캐싱하지 않는다.(HTTP 1.1)-->
     <title>Lotto</title>
-    <style>
-        #lotto{
-            display: flex;
-            justify-content: center;
-            margin-top: 3rem;
-        }
-        .lotto {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background-color: rgba(200, 250, 3, 0.3);
-            width: 100px;
-            height: 100px;
-            border: 2px solid rgb(113, 185, 243);
-            border-radius: 50%;
-            font-size: 3rem;
-            font-weight: 900;
-            margin-right: 15px;
-        }
-        #buttonBox{
-            text-align: center;
-            margin-top: 30px;
-        }
-        .button{
-            font-size: 1.5rem;
-            border-radius: .5rem;
-            padding: .5rem;
-            background-color: rgba(73, 85, 252, 0.3);
-            color:rgba(4, 126, 41, 0.7);
-        }
-        
-        @media (max-width: 720px) {
-            .lotto {
-                width: 50px;
-                height: 50px;
-                font-size: 1.5rem;
-                margin-right: 10px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="lotto.css">
 </head>
 <body>
-    <div id="lotto"></div>
-    <div id="buttonBox">
-        <button class="button">refresh</button>
-    </div>
-    <script>
-        (function(){
+    <div>당첨번호</div>
+    <div id="result"></div>
+    <div>보너스번호</div>
+    <div class="bonus"></div>
 
-            function Lotto(num, color) {
-                this.num = num;
-                this.color = color;
-                this.init();
-            }
-
-            Lotto.prototype = {
-                constructor: Lotto,
-                init: function() {
-                    const mainElem = document.createElement('div');
-                    mainElem.style.color = this.color;
-                    mainElem.innerHTML = this.num;
-                    mainElem.classList.add('lotto');
-                    document.querySelector('#lotto').appendChild(mainElem);
-                }
-            };
-
-            // 랜덤함수 6개 
-            function Rand() {
-                var str = [];
-                var tempStr = [];
-
-                for (var i = 0; i < 6; i++){
-                    str[i] = Math.floor(Math.random() * 45) + 1 ;
-
-                    if (tempStr.includes(str[i])){
-                        i--;
-                    }
-                    else {
-                        tempStr += str[i];
-                    }
-                }
-
-                return str;
-            }
-
-            const rndArr = Rand();
-            
-            const num1 = new Lotto(rndArr[0], 'rgba(100,50,250,.7)');
-            const num2 = new Lotto(rndArr[1], 'rgba(250,100,50,.7)');
-            const num3 = new Lotto(rndArr[2], 'rgba(200,100,200,.7)');
-            const num4 = new Lotto(rndArr[3], 'rgba(250,50,250,.7)');
-            const num5 = new Lotto(rndArr[4], 'rgba(150,50,150,.7)');
-            const num6 = new Lotto(rndArr[5], 'rgba(50,50,250,.7)');
-
-            const buttonElem = document.querySelector('.button');
-            buttonElem.addEventListener('click', function(){
-                location.reload();
-            });
-
-        })();
-    </script>
+    <script src="lotto.js"></script>
 </body>
 </html>
