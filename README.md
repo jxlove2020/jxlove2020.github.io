@@ -33,8 +33,9 @@ Active code page: 65001
 # jekyll 및 bundle 을 설치 해줍니다.
 > gem install jekyll bundler github-pages
 > gem install webrick
-# jekyll 생성 - 기본 파일들이 생성되어집니다.
-> jekyll new ./ --force
+# jekyll 생성 - 기본 파일들이 생성되어집니다. ( 기본 테마 생성시킬 때 사용 )
+# > jekyll new ./ --force # 테마를 가져와서 사용할 땐 충돌 나거나 에러 생길 수 있음
+
 # bundle install
 > bundle install
 # jekyll 서버 동작
@@ -174,4 +175,13 @@ on:
       - .gitignore
       - README.md
       - LICENSE
+    ...
 ```
+
+### 배포
+
+깃허브에 배포 하게 되면 Automatic build 를 통해서 깃허브에서 빌드를 하고
+gh-pages 브랜치도 생성하게 됨
+배포 시간은 4분 ~ 7분 정도 걸림
+
+배포가 완료 되면 사이트가 보이게됩니다.
