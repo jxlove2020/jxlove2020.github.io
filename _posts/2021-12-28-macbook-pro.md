@@ -6,7 +6,6 @@ tag:
   [
     mac,
     맥,
-    북,
     프로,
     초기화,
     setting,
