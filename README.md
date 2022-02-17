@@ -131,7 +131,7 @@ google_site_verification: 000 # Google Search Console관련 내용입니다.
 # ↑ --------------------------
 
 google_analytics:
-  id: "000" # Google Analytics ID입니다.
+  id: "" # Google Analytics ID입니다.
   pv:
     proxy_endpoint:
     cache_path:
@@ -148,7 +148,7 @@ toc:
 
 disqus:
   comments: true # disqus라는 덧글기능을 하는 녀석입니다. 사용하시려면 true, 아니라면 false를 적으시면 됩니다.
-  shortname: "Joseph.Note" # 사용하신다면 https://disqus.com/ 에 가입 후, shortname을 넣어줍니다.
+  shortname: "josephnote" # 사용하신다면 https://disqus.com/ 에 가입 후, shortname을 넣어줍니다.
 
 paginate: 10
 # ------------------------------
@@ -194,4 +194,3 @@ gh-pages 브랜치도 생성하게 됨
 Page 설정 에서 Source 항목의 Branch 를 gh-pages 로 바꿔주고 Save 합니다.
 
 잠시 기다리면 멋진 블로그 페이지가 모습을 드러냅니다.
-
