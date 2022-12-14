@@ -1,0 +1,7 @@
+User-agent: *
+
+Disallow: /norobots/
+
+Sitemap: https://jxlove2020.github.io/sitemap.xml
+
+#DaumWebMasterTool:fc0523acfc5c9dfb649d6b5dad35fb3f60b830476d92325f26758222976cd0f6:UJX+dFu+1q9byViQHkKC8g==
