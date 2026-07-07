@@ -1,6 +1,6 @@
 ---
 title: "CRA (create-react-app) 초기 세팅"
-date: 2021-12-14 12:10:00
+date: 2022-12-14 12:10:00
 categories: react
 tag: [react, cra, create-react-app]
 toc: true
